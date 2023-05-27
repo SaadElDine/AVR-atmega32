@@ -1,0 +1,240 @@
+
+6.TRAFFIC_SDD.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000134  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00000134  000001a8  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .stab         000006cc  00000000  00000000  000001a8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000085  00000000  00000000  00000874  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_aranges 00000080  00000000  00000000  00000900  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000046b  00000000  00000000  00000980  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000121  00000000  00000000  00000deb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000366  00000000  00000000  00000f0c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000024  00000000  00000000  00001274  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000126  00000000  00000000  00001298  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000048  00000000  00000000  000013be  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   8:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  10:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  14:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  18:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  1c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  20:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  24:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  28:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  2c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  30:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  34:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  38:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  3c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  40:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  44:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  48:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  4c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  50:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	e4 e3       	ldi	r30, 0x34	; 52
+  68:	f1 e0       	ldi	r31, 0x01	; 1
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	a0 36       	cpi	r26, 0x60	; 96
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+
+00000076 <__do_clear_bss>:
+  76:	10 e0       	ldi	r17, 0x00	; 0
+  78:	a0 e6       	ldi	r26, 0x60	; 96
+  7a:	b0 e0       	ldi	r27, 0x00	; 0
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	a0 36       	cpi	r26, 0x60	; 96
+  82:	b1 07       	cpc	r27, r17
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	0e 94 49 00 	call	0x92	; 0x92 <main>
+  8a:	0c 94 98 00 	jmp	0x130	; 0x130 <_exit>
+
+0000008e <__bad_interrupt>:
+  8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000092 <main>:
+#define SSD(val) PORTA = ((val << 4) | (PORTA & 0x0F))
+#include <util/delay.h>
+
+int main(void)
+{
+	SET_BIT(DDRA,4);
+  92:	d4 9a       	sbi	0x1a, 4	; 26
+	SET_BIT(DDRA,5);
+  94:	d5 9a       	sbi	0x1a, 5	; 26
+	SET_BIT(DDRA,6);
+  96:	d6 9a       	sbi	0x1a, 6	; 26
+	SET_BIT(DDRA,7);
+  98:	d7 9a       	sbi	0x1a, 7	; 26
+	// Set Enables
+	SET_BIT(DDRB,1);
+  9a:	b9 9a       	sbi	0x17, 1	; 23
+	SET_BIT(PORTB,1);
+  9c:	c1 9a       	sbi	0x18, 1	; 24
+	SET_BIT(DDRB,2);
+  9e:	ba 9a       	sbi	0x17, 2	; 23
+	//Set lamps
+	SET_BIT(DDRD,3);     
+  a0:	8b 9a       	sbi	0x11, 3	; 17
+	SET_BIT(DDRC,7);
+  a2:	a7 9a       	sbi	0x14, 7	; 20
+	SET_BIT(DDRC,2);
+  a4:	a2 9a       	sbi	0x14, 2	; 20
+	while(1)
+	{
+		CLR_BIT(PORTB,2);
+		for(int i = 0; i < 10;i++)
+  a6:	80 e0       	ldi	r24, 0x00	; 0
+  a8:	90 e0       	ldi	r25, 0x00	; 0
+	SET_BIT(DDRD,3);     
+	SET_BIT(DDRC,7);
+	SET_BIT(DDRC,2);
+	while(1)
+	{
+		CLR_BIT(PORTB,2);
+  aa:	c2 98       	cbi	0x18, 2	; 24
+		for(int i = 0; i < 10;i++)
+  ac:	9c 01       	movw	r18, r24
+		{
+			SSD(i);
+  ae:	6b b3       	in	r22, 0x1b	; 27
+  b0:	a9 01       	movw	r20, r18
+  b2:	42 95       	swap	r20
+  b4:	52 95       	swap	r21
+  b6:	50 7f       	andi	r21, 0xF0	; 240
+  b8:	54 27       	eor	r21, r20
+  ba:	40 7f       	andi	r20, 0xF0	; 240
+  bc:	54 27       	eor	r21, r20
+  be:	56 2f       	mov	r21, r22
+  c0:	5f 70       	andi	r21, 0x0F	; 15
+  c2:	45 2b       	or	r20, r21
+  c4:	4b bb       	out	0x1b, r20	; 27
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  c6:	4f ef       	ldi	r20, 0xFF	; 255
+  c8:	53 ed       	ldi	r21, 0xD3	; 211
+  ca:	60 e3       	ldi	r22, 0x30	; 48
+  cc:	41 50       	subi	r20, 0x01	; 1
+  ce:	50 40       	sbci	r21, 0x00	; 0
+  d0:	60 40       	sbci	r22, 0x00	; 0
+  d2:	e1 f7       	brne	.-8      	; 0xcc <main+0x3a>
+  d4:	00 c0       	rjmp	.+0      	; 0xd6 <main+0x44>
+  d6:	00 00       	nop
+	SET_BIT(DDRC,7);
+	SET_BIT(DDRC,2);
+	while(1)
+	{
+		CLR_BIT(PORTB,2);
+		for(int i = 0; i < 10;i++)
+  d8:	2f 5f       	subi	r18, 0xFF	; 255
+  da:	3f 4f       	sbci	r19, 0xFF	; 255
+  dc:	2a 30       	cpi	r18, 0x0A	; 10
+  de:	31 05       	cpc	r19, r1
+  e0:	31 f7       	brne	.-52     	; 0xae <main+0x1c>
+		{
+			SSD(i);
+			_delay_ms(1000);
+		}
+		SET_BIT(PORTB,2);
+  e2:	c2 9a       	sbi	0x18, 2	; 24
+		for(int i = 0; i < 10;i++)
+  e4:	9c 01       	movw	r18, r24
+		{
+			SSD(i);
+  e6:	6b b3       	in	r22, 0x1b	; 27
+  e8:	a9 01       	movw	r20, r18
+  ea:	42 95       	swap	r20
+  ec:	52 95       	swap	r21
+  ee:	50 7f       	andi	r21, 0xF0	; 240
+  f0:	54 27       	eor	r21, r20
+  f2:	40 7f       	andi	r20, 0xF0	; 240
+  f4:	54 27       	eor	r21, r20
+  f6:	56 2f       	mov	r21, r22
+  f8:	5f 70       	andi	r21, 0x0F	; 15
+  fa:	45 2b       	or	r20, r21
+  fc:	4b bb       	out	0x1b, r20	; 27
+  fe:	4f ef       	ldi	r20, 0xFF	; 255
+ 100:	53 ed       	ldi	r21, 0xD3	; 211
+ 102:	60 e3       	ldi	r22, 0x30	; 48
+ 104:	41 50       	subi	r20, 0x01	; 1
+ 106:	50 40       	sbci	r21, 0x00	; 0
+ 108:	60 40       	sbci	r22, 0x00	; 0
+ 10a:	e1 f7       	brne	.-8      	; 0x104 <main+0x72>
+ 10c:	00 c0       	rjmp	.+0      	; 0x10e <main+0x7c>
+ 10e:	00 00       	nop
+		{
+			SSD(i);
+			_delay_ms(1000);
+		}
+		SET_BIT(PORTB,2);
+		for(int i = 0; i < 10;i++)
+ 110:	2f 5f       	subi	r18, 0xFF	; 255
+ 112:	3f 4f       	sbci	r19, 0xFF	; 255
+ 114:	2a 30       	cpi	r18, 0x0A	; 10
+ 116:	31 05       	cpc	r19, r1
+ 118:	31 f7       	brne	.-52     	; 0xe6 <main+0x54>
+		{
+			SSD(i);
+			_delay_ms(1000);
+		}
+		CLR_BIT(PORTB,2);
+ 11a:	c2 98       	cbi	0x18, 2	; 24
+ 11c:	2f ef       	ldi	r18, 0xFF	; 255
+ 11e:	33 ed       	ldi	r19, 0xD3	; 211
+ 120:	40 e3       	ldi	r20, 0x30	; 48
+ 122:	21 50       	subi	r18, 0x01	; 1
+ 124:	30 40       	sbci	r19, 0x00	; 0
+ 126:	40 40       	sbci	r20, 0x00	; 0
+ 128:	e1 f7       	brne	.-8      	; 0x122 <main+0x90>
+ 12a:	00 c0       	rjmp	.+0      	; 0x12c <main+0x9a>
+ 12c:	00 00       	nop
+ 12e:	bd cf       	rjmp	.-134    	; 0xaa <main+0x18>
+
+00000130 <_exit>:
+ 130:	f8 94       	cli
+
+00000132 <__stop_program>:
+ 132:	ff cf       	rjmp	.-2      	; 0x132 <__stop_program>

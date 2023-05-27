@@ -11,7 +11,7 @@
 int main(void)
 {
 	SET_BIT(DDRD,3);
-	SET_BIT(PORTD,3);			
+	SET_BIT(DDRD,3);			
     while(1)
     {
         //TODO:: Please write your application code 
