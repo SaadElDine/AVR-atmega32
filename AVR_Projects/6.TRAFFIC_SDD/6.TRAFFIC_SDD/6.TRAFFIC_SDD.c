@@ -8,43 +8,33 @@
 
 #define F_CPU 16000000UL
 #include "Math.h"
-#include <avr/io.h>
+#include "DIO_Interface.h"
+#include "STD_TYPE.h"
 #define SSD(val) PORTA = ((val << 4) | (PORTA & 0x0F))
 #include <util/delay.h>
 
 int main(void)
 {
-	SET_BIT(DDRA,4);
-	SET_BIT(DDRA,5);
-	SET_BIT(DDRA,6);
-	SET_BIT(DDRA,7);
+	DIO_void_Set_pin_dir(PORTA, PIN4, OUTPUT);
+	DIO_void_Set_pin_dir(PORTA, PIN5, OUTPUT);
+	DIO_void_Set_pin_dir(PORTA, PIN6, OUTPUT);
+	DIO_void_Set_pin_dir(PORTA, PIN7, OUTPUT);
 	// Set Enables
-	SET_BIT(DDRB,1);
-	SET_BIT(PORTB,1);
-	SET_BIT(DDRB,2);
+	DIO_void_Set_pin_dir(PORTB, PIN1, OUTPUT);
+	DIO_void_Set_pin_dir(PORTB, PIN2, OUTPUT);
+	DIO_void_Set_pin_val(PORTB, PIN1, HIGH);
 	//Set lamps
-	SET_BIT(DDRD,3);     
-	SET_BIT(DDRC,7);
-	SET_BIT(DDRC,2);
+	DIO_void_Set_pin_dir(PORTA, PIN4, OUTPUT);
+	DIO_void_Set_pin_dir(PORTA, PIN5, OUTPUT);
+	DIO_void_Set_pin_dir(PORTA, PIN6, OUTPUT);
+	
 	while(1)
 	{
-		for (int j = 0; j < 10;j++) 
-		{
-			CLR_BIT(PORTB,2);
 			for(int i = 0; i < 10;i++)
 			{
 				SSD(i);
-				_delay_ms(1000);
 			}
-			SET_BIT(PORTB,2);
-			for(int i = 0; i < 10;i++)
-			{
-				SSD(i);
+			
 				_delay_ms(1000);
-			}
-			CLR_BIT(PORTB,2);
-			_delay_ms(1000);
-		}
-		
 	}
 }

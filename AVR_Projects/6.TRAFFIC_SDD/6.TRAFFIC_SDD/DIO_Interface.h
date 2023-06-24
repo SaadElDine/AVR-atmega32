@@ -30,8 +30,7 @@
 #define PIN7   7		  //Define PIN 7
 
 void DIO_void_Set_pin_dir(u8 copy_u8_port, u8 copy_u8_pin, u8 copy_u8_dir) ;
-void DIO_void_Set_pin_val(u8 copy_u8_port, u8 copy_u8_pin, u8 copy_u8_val) ; 
-void DIO_void_Toggle_pin_val(u8 copy_u8_port, u8 copy_u8_pin) ; 
+void DIO_void_Set_pin_val(u8 copy_u8_port, u8 copy_u8_pin, u8 copy_u8_val) ;
 u8	 DIO_void_Get_pin_val(u8 copy_u8_port, u8 copy_u8_pin) ;
 
 

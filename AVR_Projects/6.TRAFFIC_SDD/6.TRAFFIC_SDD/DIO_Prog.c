@@ -64,20 +64,6 @@ void DIO_void_Set_pin_val(u8 copy_u8_port, u8 copy_u8_pin, u8 copy_u8_val)
 	
 }
 
-void DIO_void_Toggle_pin_val(u8 copy_u8_port, u8 copy_u8_pin)
-{
-	if(copy_u8_pin <= 7 && copy_u8_pin >=0)
-	{
-		switch (copy_u8_port)
-		{
-			case PORTA: TOGGLE_BIT(PORTA_REG, copy_u8_pin); break;
-			case PORTB: TOGGLE_BIT(PORTB_REG, copy_u8_pin); break;
-			case PORTC: TOGGLE_BIT(PORTC_REG, copy_u8_pin); break;
-			case PORTD: TOGGLE_BIT(PORTD_REG, copy_u8_pin); break;
-		}
-	}
-}
-
 u8	 DIO_void_Get_pin_val(u8 copy_u8_port, u8 copy_u8_pin) 
 {
 	u8 LOC_u8_val = 0;

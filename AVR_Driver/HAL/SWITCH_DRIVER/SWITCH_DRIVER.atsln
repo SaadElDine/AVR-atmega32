@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "SWITCH_DRIVER", "SWITCH_DRIVER\SWITCH_DRIVER.cproj", "{66F16DC3-5197-4D8C-A668-CB13EF81ADA4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66F16DC3-5197-4D8C-A668-CB13EF81ADA4}.Debug|AVR.ActiveCfg = Debug|AVR
+		{66F16DC3-5197-4D8C-A668-CB13EF81ADA4}.Debug|AVR.Build.0 = Debug|AVR
+		{66F16DC3-5197-4D8C-A668-CB13EF81ADA4}.Release|AVR.ActiveCfg = Release|AVR
+		{66F16DC3-5197-4D8C-A668-CB13EF81ADA4}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
