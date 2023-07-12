@@ -97,22 +97,48 @@ u8	 DIO_void_Get_pin_val(u8 copy_u8_port, u8 copy_u8_pin)
 
 void DIO_void_Set_port_dir(u8 copy_u8_port, u8 copy_u8_dir)
 {
+	if (copy_u8_dir == OUTPUT)
+	{
 		switch (copy_u8_port)
 		{
-			case PORTA: DDRA_REG = copy_u8_dir; break;
-			case PORTB: DDRB_REG = copy_u8_dir; break;
-			case PORTC: DDRC_REG = copy_u8_dir; break;
-			case PORTD: DDRD_REG = copy_u8_dir; break;
+			case PORTA: DDRA_REG = 0xff; break;
+			case PORTB: DDRB_REG = 0xff; break;
+			case PORTC: DDRC_REG = 0xff; break;
+			case PORTD: DDRD_REG = 0xff; break;
 		}
+	}
+	else
+	{
+		switch (copy_u8_port)
+		{
+			case PORTA: DDRA_REG = 0x00 ; break;
+			case PORTB: DDRB_REG = 0x00 ; break;
+			case PORTC: DDRC_REG = 0x00 ; break;
+			case PORTD: DDRD_REG = 0x00 ; break;
+		}
+	}
 }
 
-void DIO_void_Set_port_val(u8 copy_u8_port, u8 copy_u8_val)
+void DIO_void_Set_port_val(u8 copy_u8_port, u8 copy_u8_dir)
 {
-		switch (copy_u8_port)
+		if (copy_u8_dir == HIGH)
 		{
-			case PORTA: PORTA_REG = copy_u8_val; break;
-			case PORTB: PORTB_REG = copy_u8_val; break;
-			case PORTC: PORTC_REG = copy_u8_val; break;
-			case PORTD: PORTD_REG = copy_u8_val; break;
+			switch (copy_u8_port)
+			{
+				case PORTA: PORTA_REG = 0xff; break;
+				case PORTB: PORTB_REG = 0xff; break;
+				case PORTC: PORTC_REG = 0xff; break;
+				case PORTD: PORTD_REG = 0xff; break;
+			}
+		}
+		else
+		{
+			switch (copy_u8_port)
+			{
+				case PORTA: PORTA_REG = 0x00 ; break;
+				case PORTB: PORTB_REG = 0x00 ; break;
+				case PORTC: PORTC_REG = 0x00 ; break;
+				case PORTD: PORTD_REG = 0x00 ; break;
+			}
 		}
 }

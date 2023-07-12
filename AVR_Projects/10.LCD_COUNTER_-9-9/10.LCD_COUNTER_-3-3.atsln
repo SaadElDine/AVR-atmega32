@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "10.LCD_COUNTER_-3-3", "10.LCD_COUNTER_-3-3\10.LCD_COUNTER_-3-3.cproj", "{E0D342E8-A336-409A-B8F8-09F70ABFC41A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0D342E8-A336-409A-B8F8-09F70ABFC41A}.Debug|AVR.ActiveCfg = Debug|AVR
+		{E0D342E8-A336-409A-B8F8-09F70ABFC41A}.Debug|AVR.Build.0 = Debug|AVR
+		{E0D342E8-A336-409A-B8F8-09F70ABFC41A}.Release|AVR.ActiveCfg = Release|AVR
+		{E0D342E8-A336-409A-B8F8-09F70ABFC41A}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
