@@ -11,3 +11,6 @@
 9. 2 Connected SEVEN SEGMENT Counter 0 --> 99
 10. LCD Counter -9 --> 9 With Push Button
 11. LCD Dynamic Strings (from left to write, row by row)
+12. LCD Dynamic Sin Wave Strings
+13. Tasebbeh APP LCD with 3 Switches (count up, Count Down, Reset)
+14. LCD Write My Name In Arabic
