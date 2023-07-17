@@ -8,3 +8,6 @@
 6. TRAFFIC SEVEN SEGMENT DISPLAY
 7. DYNAMIC LEDS
 8. DYNAMIC LEDS WITH PUSH BUTTON
+9. 2 Connected SEVEN SEGMENT Counter 0 --> 99
+10. LCD Counter -9 --> 9 With Push Button
+11. LCD Dynamic Strings (from left to write, row by row)
