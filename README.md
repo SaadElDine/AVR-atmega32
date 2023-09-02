@@ -1,4 +1,7 @@
-# AVR-atmega32-AMIT
+# **AVR-atmega32-AMIT**
+
+![image](https://github.com/SaadElDine/AVR-atmega32/assets/113860522/3830a4ff-928b-48fd-9b3e-8da8d3e04b03)
+
 ## AMIT tutorials using AVR atmega32, Embedded Systems Course
 1. LED ON
 2. LED FLASH (BINK)
