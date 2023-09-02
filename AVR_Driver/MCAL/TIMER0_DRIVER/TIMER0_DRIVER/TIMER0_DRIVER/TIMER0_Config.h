@@ -1,0 +1,18 @@
+/*
+ * TIMER0_Config.h
+ *
+ * Created: 8/5/2023 9:35:40 AM
+ *  Author: User
+ */ 
+
+
+#ifndef TIMER0_CONFIG_H_
+#define TIMER0_CONFIG_H_
+
+/*TIMER TERMENOLOGY*/
+#define F_SYSTEM 16000000
+#define TIMER_OVERFLOW_COUNT	256
+#define TIMER_TICK (1/F_SYSTEM)
+#define TIMER_OVERFLOW_TIME (TIMER_OVERFLOW_COUNT*TIMER_TICK)
+
+#endif /* TIMER0_CONFIG_H_ */

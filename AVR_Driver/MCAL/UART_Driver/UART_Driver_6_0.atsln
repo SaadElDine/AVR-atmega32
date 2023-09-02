@@ -1,0 +1,26 @@
+
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "UART_Driver", "UART_Driver\UART_Driver.cproj", "{9EB90AE4-AC99-4A84-ABC9-CE929878F16B}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "UART_RX", "UART_RX\UART_RX_6_0.cproj", "{B67816A3-BC7C-44C8-A611-54B9DBDEA8E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9EB90AE4-AC99-4A84-ABC9-CE929878F16B}.Debug|AVR.ActiveCfg = Debug|AVR
+		{9EB90AE4-AC99-4A84-ABC9-CE929878F16B}.Debug|AVR.Build.0 = Debug|AVR
+		{9EB90AE4-AC99-4A84-ABC9-CE929878F16B}.Release|AVR.ActiveCfg = Release|AVR
+		{9EB90AE4-AC99-4A84-ABC9-CE929878F16B}.Release|AVR.Build.0 = Release|AVR
+		{B67816A3-BC7C-44C8-A611-54B9DBDEA8E5}.Debug|AVR.ActiveCfg = Debug|AVR
+		{B67816A3-BC7C-44C8-A611-54B9DBDEA8E5}.Debug|AVR.Build.0 = Debug|AVR
+		{B67816A3-BC7C-44C8-A611-54B9DBDEA8E5}.Release|AVR.ActiveCfg = Release|AVR
+		{B67816A3-BC7C-44C8-A611-54B9DBDEA8E5}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
